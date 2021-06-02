@@ -23,7 +23,8 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
-import MainTabs from './pages/MainTabs';
+//import MainTabs from './pages/MainTabs';
+import SkartajiTabs from './pages/SkartajiTabs';
 import { connect } from './data/connect';
 import { AppContextProvider } from './data/AppContext';
 import { loadConfData } from './data/sessions/sessions.actions';
@@ -80,7 +81,7 @@ const IonicApp: React.FC<IonicAppProps> = ({ darkMode, schedule, setIsLoggedIn, 
                 We use IonRoute here to keep the tabs state intact,
                 which makes transitions between tabs and non tab pages smooth
                 */}
-                <Route path="/tabs" render={() => <MainTabs />} />
+                <Route path="/tabs" render={() => <SkartajiTabs />} />
                 <Route path="/account" component={Account} />
                 <Route path="/login" component={Login} />
                 <Route path="/signup" component={Signup} />
