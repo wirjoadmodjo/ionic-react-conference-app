@@ -416,3 +416,17 @@
 
   --ion-tab-bar-background: #1f1f1f;
 }
+
+
+
+
+
+@font-face {
+  font-family: 'Montserrat-BlackItalic';
+  src: url('/assets/fonts/Montserrat/Montserrat-BlackItalic.ttf');  
+}
+
+.mont-BlackItalic{
+  font-family: 'Montserrat-BlackItalic';
+}
+
