@@ -14,7 +14,7 @@ const BerandaPage: React.FC = () => {
       <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">dummy</IonTitle>
+            <IonTitle size="large">S'kartaji</IonTitle>
           </IonToolbar>
         </IonHeader>
         <ExploreContainer name="Statistik Kota Kediri Data Tersaji" />

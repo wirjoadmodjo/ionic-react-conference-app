@@ -1,9 +1,30 @@
 import React from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonContent, IonHeader, IonItem, IonItemSliding, IonList, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
+
+import axios from 'axios';
 //import './Tab1.css';
 
+const apiUrl = 'http://localhost:8765/skartaji/indikator/strategis'; 
+
+const getDataInstra = () => {
+  return axios({
+    url: apiUrl,
+    method: 'get'
+  }).then(response => {
+    console.log(response);
+    return response.data;
+  }) 
+}
+
 const InstraPage: React.FC = () => {
+  const [instra, setInstra] = React.useState([]);
+  //const items: any[] = [];
+
+  React.useEffect(() => {
+    getDataInstra().then(data => setInstra(data.data));
+  }, []);
+
   return (
     <IonPage>
       <IonHeader>
@@ -12,12 +33,17 @@ const InstraPage: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Berita Resmi Statistik</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <ExploreContainer name="Berita Resmi Statistik" />
+        <IonList>
+          {
+            instra.map(data => {
+              return (
+                <IonItem>
+                  {data['nama_indikator']}
+                </IonItem>
+              );
+            })
+          }
+        </IonList>
       </IonContent>
     </IonPage>
   );
