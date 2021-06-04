@@ -23,6 +23,7 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import './theme/font.scss';
 
 //import MainTabs from './pages/MainTabs';
 import SkartajiTabs from './pages/SkartajiTabs';

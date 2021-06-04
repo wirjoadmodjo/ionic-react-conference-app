@@ -1,11 +1,14 @@
 import React from 'react';
 import { IonContent, IonHeader, IonItem, IonItemSliding, IonList, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
+
+
+import IndikatorItem from '../components/IndikatorItem';
 
 import axios from 'axios';
 //import './Tab1.css';
 
-const apiUrl = 'http://localhost:8765/skartaji/indikator/strategis'; 
+//const apiUrl = 'http://localhost:8765/skartaji/indikator/strategis'; 
+const apiUrl = 'https://webapps.bps.go.id/kedirikota/skartaji/indikator/strategis'; 
 
 const getDataInstra = () => {
   return axios({
@@ -29,7 +32,7 @@ const InstraPage: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Indikator Strategis</IonTitle>
+        <IonTitle className="mont-ExtraBoldItalic">Indikator Strategis</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
@@ -37,12 +40,10 @@ const InstraPage: React.FC = () => {
           {
             instra.map(data => {
               return (
-                <IonItem>
-                  {data['nama_indikator']}
-                </IonItem>
+                <IndikatorItem nama={data['nama_indikator']} nilai={data['data']} satuan={data['unit']} linknav="/indikator/penduduk" ikon={data['app_icon']} />                
               );
             })
-          }
+          }          
         </IonList>
       </IonContent>
     </IonPage>
