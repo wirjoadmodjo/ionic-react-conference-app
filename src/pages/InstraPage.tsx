@@ -1,5 +1,5 @@
 import React from 'react';
-import { IonContent, IonHeader, IonItem, IonItemSliding, IonList, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButtons, IonContent, IonHeader, IonItem, IonItemSliding, IonList, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 
 
 import IndikatorItem from '../components/IndikatorItem';
@@ -32,7 +32,10 @@ const InstraPage: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-        <IonTitle className="mont-ExtraBoldItalic">Indikator Strategis</IonTitle>
+          <IonButtons slot="start">
+            <IonMenuButton />
+          </IonButtons>
+          <IonTitle className="mont-ExtraBoldItalic">Indikator Strategis</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>

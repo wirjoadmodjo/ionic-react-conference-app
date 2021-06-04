@@ -10,6 +10,17 @@ import InfografisPage from './InfografisPage';
 import TabelPage from './TabelPage';
 import TestingPage from './TestingPage';
 
+import IndikatorDetailPage from './IndikatorDetailPage';
+
+
+
+import SchedulePage from './SchedulePage';
+import SpeakerList from './SpeakerList';
+import SpeakerDetail from './SpeakerDetail';
+import SessionDetail from './SessionDetail';
+import MapView from './MapView';
+import About from './About';
+
 
 interface MainTabsProps { }
 
@@ -24,6 +35,16 @@ const SkartajiTabs: React.FC<MainTabsProps> = () => {
                 <Route path="/tabs/infografis" render={() => <InfografisPage />} exact={true}/>
                 <Route path="/tabs/tabel" render={() => <TabelPage />} exact={true}/>
                 <Route path="/tabs/testing" render={() => <TestingPage />} exact={true}/>
+                <Route path="/indikator/:id" component={IndikatorDetailPage} exact={true} />
+
+
+                <Route path="/tabs/schedule" render={() => <SchedulePage />} exact={true} />
+                <Route path="/tabs/speakers" render={() => <SpeakerList />} exact={true} />
+                <Route path="/tabs/speakers/:id" component={SpeakerDetail} exact={true} />
+                <Route path="/tabs/schedule/:id" component={SessionDetail} />
+                <Route path="/tabs/speakers/sessions/:id" component={SessionDetail} />
+                <Route path="/tabs/map" render={() => <MapView />} exact={true} />
+                <Route path="/tabs/about" render={() => <About />} exact={true} />
             </IonRouterOutlet>
             <IonTabBar slot='bottom'>
                 <IonTabButton tab="beranda" href="/tabs/beranda">
