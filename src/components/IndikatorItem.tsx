@@ -6,15 +6,29 @@ import { barChartSharp, briefcaseSharp, cartSharp,
   pieChartSharp, shapesSharp, walletSharp 
 } from "ionicons/icons";
 
+import IndikatorDetailPage from '../pages/IndikatorDetailPage';
+
+interface IndikatorItemProps {
+  indikator: Indikator;
+  appData: App;
+  kediri: Kediri;
+  antarWilayah: AntarWilayah;
+}
+
 interface ContainerProps {
-    nama: string
-    nilai: string
+    indikatorNama: string
+    indikatorUnit: string
+    indikatorData: string
     satuan: string
     linknav: string
     ikon: string    
   }
   
-  const IndikatorItem: React.FC<ContainerProps> = ({ nama, nilai, satuan="", linknav, ikon="" }) => {
+  const IndikatorItem: React.FC<ContainerProps> = ({ 
+    indikatorNama, indikatorData, indikatorUnit, indikatorDataTH,
+    appIcon, appRouter,
+    kediriDomain, kediriVar, kediriVervar,
+    antarDomain, antarVar, antarFilter }) => {
     addIcons({
       "people": peopleSharp,
       "cart": cartSharp,
@@ -27,13 +41,13 @@ interface ContainerProps {
     });
 
     return (
-      <IonItem routerLink={linknav} detail>
-        <IonIcon name={ikon} slot="start" color="primary" size="large"></IonIcon>        
+      <IonItem routerLink={`/tabs/instra/${kediriDomain + kediriVar}`}>
+        <IonIcon name={appIcon} slot="start" color="primary" size="large"></IonIcon>        
         <IonLabel color="primary">
-          <h4 className="mont-SemiBoldItalic">{nama}</h4>
+          <h4 className="mont-SemiBoldItalic">{indikatorNama}</h4>
           <h1>
-            <strong className="mont-ExtraBoldItalic">{nilai} </strong>
-            <small className="mont-Italic">{satuan}</small>
+            <strong className="mont-ExtraBoldItalic">{indikatorData} </strong>
+            <small className="mont-Italic">{indikatorUnit}</small>
           </h1>
           
         </IonLabel>

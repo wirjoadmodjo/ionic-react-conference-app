@@ -35,7 +35,7 @@ const SkartajiTabs: React.FC<MainTabsProps> = () => {
                 <Route path="/tabs/infografis" render={() => <InfografisPage />} exact={true}/>
                 <Route path="/tabs/tabel" render={() => <TabelPage />} exact={true}/>
                 <Route path="/tabs/testing" render={() => <TestingPage />} exact={true}/>
-                <Route path="/indikator/:id" component={IndikatorDetailPage} exact={true} />
+                <Route path="/tabs/instra/:id" component={IndikatorDetailPage} exact={true} />
 
 
                 <Route path="/tabs/schedule" render={() => <SchedulePage />} exact={true} />

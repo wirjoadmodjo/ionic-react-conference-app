@@ -7,7 +7,8 @@ import IndikatorItem from '../components/IndikatorItem';
 import axios from 'axios';
 //import './Tab1.css';
 
-//const apiUrl = 'http://localhost:8765/skartaji/indikator/strategis'; 
+
+//const apiUrl = 'http://10.135.71.97:8765/skartaji/indikator/strategis'; 
 const apiUrl = 'https://webapps.bps.go.id/kedirikota/skartaji/indikator/strategis'; 
 
 const getDataInstra = () => {
@@ -22,8 +23,7 @@ const getDataInstra = () => {
 
 const InstraPage: React.FC = () => {
   const [instra, setInstra] = React.useState([]);
-  //const items: any[] = [];
-
+  
   React.useEffect(() => {
     getDataInstra().then(data => setInstra(data.data));
   }, []);
@@ -43,7 +43,21 @@ const InstraPage: React.FC = () => {
           {
             instra.map(data => {
               return (
-                <IndikatorItem nama={data['nama_indikator']} nilai={data['data']} satuan={data['unit']} linknav="/indikator/penduduk" ikon={data['app_icon']} />                
+                //<IndikatorItem nama={data['nama_indikator']} nilai={data['data']} satuan={data['unit']} linknav="/indikator/penduduk" ikon={data['app_icon']} /> 
+                <IndikatorItem 
+                  indikatorNama = {data['nama_indikator']}
+                  indikatorData = {data['data']}
+                  indikatorUnit = {data['unit']}
+                  indikatorDataTH = {data['data_th']}
+                  appIcon = {data['app_icon']}
+                  appRouter = ""
+                  kediriDomain = {data['data_api']['kediri']['domain']}
+                  kediriVar = {data['data_api']['kediri']['var']}
+                  kediriVervar = {data['data_api']['kediri']['vervar']}
+                  antarDomain = {data['data_api']['antar-wilayah']['domain']}
+                  antarVar = {data['data_api']['antar-wilayah']['var']}
+                  antarFilter = {data['data_api']['antar-wilayah']['filter']}
+                />                
               );
             })
           }          
