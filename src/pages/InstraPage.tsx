@@ -6,8 +6,8 @@ import IndikatorItem from '../components/IndikatorItem';
 import axios from 'axios';
 //import './Tab1.css';
 
-//const apiUrl = 'http://localhost:8765/skartaji/indikator/strategis'; 
-const apiUrl = 'https://webapps.bps.go.id/kedirikota/skartaji/indikator/strategis'; 
+const apiUrl = 'http://localhost:8765/skartaji/indikator/strategis'; 
+//const apiUrl = 'https://webapps.bps.go.id/kedirikota/skartaji/indikator/strategis'; 
 
 const getDataInstra = () => {
   return axios({
