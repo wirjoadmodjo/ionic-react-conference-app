@@ -1,23 +1,20 @@
 import React from 'react';
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
-//import './Tab1.css';
 
 const InfografisPage: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Infografis</IonTitle>
+            <IonTitle className="mont-ExtraBoldItalic">Infografis</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Galeri Infografis</IonTitle>
+            <IonTitle size="large">Konten</IonTitle>
           </IonToolbar>
-        </IonHeader>
-        <ExploreContainer name="Infografis" />
+        </IonHeader>        
       </IonContent>
     </IonPage>
   );

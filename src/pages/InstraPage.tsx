@@ -1,14 +1,12 @@
 import React from 'react';
-import { IonButtons, IonContent, IonHeader, IonItem, IonItemSliding, IonList, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-
+import { IonButtons, IonContent, IonHeader, IonList, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 
 import IndikatorItem from '../components/IndikatorItem';
 
 import axios from 'axios';
 //import './Tab1.css';
 
-
-//const apiUrl = 'http://10.135.71.97:8765/skartaji/indikator/strategis'; 
+//const apiUrl = 'http://localhost:8765/skartaji/indikator/strategis'; 
 const apiUrl = 'https://webapps.bps.go.id/kedirikota/skartaji/indikator/strategis'; 
 
 const getDataInstra = () => {

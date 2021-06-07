@@ -2,26 +2,23 @@ import React from 'react';
 import { IonIcon, IonItem, IonLabel } from "@ionic/react";
 import { addIcons } from 'ionicons';
 import { barChartSharp, briefcaseSharp, cartSharp, 
-  chevronForwardSharp, hourglassSharp, peopleSharp, 
+  hourglassSharp, peopleSharp, 
   pieChartSharp, shapesSharp, walletSharp 
 } from "ionicons/icons";
-
-import IndikatorDetailPage from '../pages/IndikatorDetailPage';
-
-interface IndikatorItemProps {
-  indikator: Indikator;
-  appData: App;
-  kediri: Kediri;
-  antarWilayah: AntarWilayah;
-}
 
 interface ContainerProps {
     indikatorNama: string
     indikatorUnit: string
     indikatorData: string
-    satuan: string
-    linknav: string
-    ikon: string    
+    indikatorDataTH: string;
+    appIcon: string;
+    appRouter: string;
+    kediriDomain: string;
+    kediriVar: string;
+    kediriVervar: string;
+    antarDomain: string;
+    antarVar: string;
+    antarFilter: string;
   }
   
   const IndikatorItem: React.FC<ContainerProps> = ({ 
